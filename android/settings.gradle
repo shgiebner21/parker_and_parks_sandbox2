@@ -1,0 +1,3 @@
+rootProject.name = 'parker_and_parks_sandbox2'
+
+include ':app'
