@@ -74,7 +74,7 @@ class Park extends Component {
         <Card>
 
           <CardSection>
-            <View style={{ width: width * .80, flexDirection: 'row' }} >
+            <View style={{ width: width * .70, flexDirection: 'row' }} >
               <Image style={styles.parkerImage}
                      source={require('../images/parker-bear-original-painting.jpg')} />
 

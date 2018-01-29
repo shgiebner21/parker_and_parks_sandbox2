@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
 
   },
   textBlock: {
-    paddingTop: 50,
+    paddingTop: 10,
     marginLeft: 5,
     marginRight: 5,
     flexDirection: 'row',

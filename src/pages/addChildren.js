@@ -9,35 +9,30 @@ import { Card, CardSection, InputField, Button } from '../components/common'
 
 
 const updateChildren = (children, id) => {
-
   return ( children.totalPoints = 0,
            children.type = 'children',
            children.timeStamp = moment().format('MMMM Do YYYY, h:mm a') )
 }
-const postChild = (name, nameLast, age, gender, notes, type, points, fitness, samaritan, learning, timeStamp, familyId) => {
 
+const postChild = (name, nameLast, age, gender, notes, type, points, fitness, samaritan,
+                   learning, timeStamp, familyId) => {
   return (
     firebase.database().ref(`/children/${familyId}`)
-      .push({ name, nameLast, age, gender, notes, type, points, fitness, samaritan, learning, timeStamp, familyId })
+      .push({ name, nameLast, age, gender, notes, type, points, fitness, samaritan, learning,
+              timeStamp, familyId })
     )
 }
+
 const postChildId = (childId, famID, kidID) => {
+  console.log('inside postChildId, childId is, ', childId)
+  console.log('inside postChildId, famID is, ', famID)
+  console.log('inside postChildId, kidID is, ', kidID)
 
   return (
     firebase.database().ref(`/children/${famID}/${kidID}`)
       .update({ childId })
   )
 }
-
-const initialChild = {
-    name: '',
-    age: '',
-    gender: '',
-    notes: '',
-    fitness: 0,
-    samaritan: 0,
-    learning: 0
-  }
 
 
 
@@ -158,7 +153,7 @@ const mapActionsToProps = (dispatch) => ({
 // to the database, so this approach yields cleaner data
     postChild(children.childFirst, family.parentLast, children.age, children.gender, children.notes,
               children.type, children.totalPoints, children.fitness, children.samaritan, children.learning, children.timeStamp, family.user.uid)
-                .then(child => postChildId(children.childId = child.path.o[2], child.path.o[1], child.path.o[2]) )
+                .then(child => postChildId(children.childId = child.path.pieces_[2], child.path.pieces_[1], child.path.pieces_[2]) )
                 history.push('/family')
   },
   submitAgain: (children, family, history) => (e) => {
