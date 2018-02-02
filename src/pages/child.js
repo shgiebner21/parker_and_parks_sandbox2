@@ -70,12 +70,12 @@ class Child extends Component {
         map(child => childrenList.push(child), allChildren), allChildrenObj)
 
       const child = childrenList === [] ? <View><Text>No children</Text></View>
-                      : compose(
-          map(child => <View key={child.name}>
-              <Text>{child.name} { take(1, child.nameLast) }: {child.points}</Text>
-            </View>),
-          sort( (a, b) => b.points - a.points)
-        )(childrenList)
+          : compose(
+              map(child => <View key={child.name}>
+                             <Text>{child.name} { take(1, child.nameLast) }: {child.points}</Text>
+                           </View>),
+              sort( (a, b) => b.points - a.points)
+            )(childrenList)
 
         return ( take(5, child) )
     }
