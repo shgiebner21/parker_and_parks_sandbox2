@@ -12,6 +12,7 @@ const InputField = (props) => {
                  secureTextEntry={props.secureTextEntry}
                  keyboardType={props.keyboardType}
                  autoCorrect={props.autoCorrect}
+                 underlineColorAndroid={'transparent'}
       />
     </View>
   )
@@ -20,7 +21,6 @@ const InputField = (props) => {
 
 const styles = {
   inputFieldStyles: {
-    height: 16,
     width: 100,
     color: '#000',
     paddingRight: 5,
