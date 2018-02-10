@@ -35,38 +35,52 @@ class Park extends Component {
       )
     }
 
-    const listActivity = (activity) => {
-      const runActivity = require('../images/Hampton-Park-track.jpg')
-      const fitActivity = require('../images/fitness-course.jpg')
-      const racingActivity = require('../images/horse-racing.jpg')
-      const denmarkActivity = require('../images/denmark-vesey-statue.jpg')
-      const bandActivity = require('../images/hampton-park-bandstand.jpg')
-      const cleanActivity = require('../images/keep-clean-sign.jpg')
-      const lakeActivity = require('../images/wooden-sailing-boat.jpg')
-      const appActivity = require('../images/junior-ranger.png')
+    // I simply could not find a way to get around the require('string') issue below.
+    // Pulling the image url in from the db simply could not get that to work.
+    // and yes, I hate doing it this way.
+
+        const listActivity = (activity) => {
+          const runActivity = require('../images/Hampton-Park-track.jpg')
+          const fitActivity = require('../images/fitness-course.jpg')
+          const racingActivity = require('../images/horse-racing.jpg')
+          const denmarkActivity = require('../images/denmark-vesey-statue.jpg')
+          const bandActivity = require('../images/hampton-park-bandstand.jpg')
+          const cleanActivity = require('../images/keep-clean-sign.jpg')
+          const lakeActivity = require('../images/evening-over-colonial-lake.jpg')
+          const learnActivity = require('../images/junior-ranger.png')
+          const landmarkActivity = require('../images/StPhilips.jpg')
+          const natureActivity = require('../images/Colonial-Lake-flowerbed.jpg')
+          const pierActivity = require('../images/demetre-park-sunlit-dock.jpg')
+          const marshActivity = require('../images/egret-demetre-park.jpg')
 
 
-      switch(activity.name) {
-        case 'Run around the track':
-          return activityBadge(activity, runActivity)
-        case 'Fitness course':
-          return activityBadge(activity, fitActivity)
-        case 'Horse racing track':
-          return activityBadge(activity, racingActivity)
-        case 'Denmark Vesey Statue':
-          return activityBadge(activity, denmarkActivity)
-        case 'Band Stand':
-          return activityBadge(activity, bandActivity)
-        case 'Keep the park clean!':
-          return activityBadge(activity, cleanActivity)
-        case 'Lake':
-          return activityBadge(activity, lakeActivity)
-        case 'Make the flowers pretty!':
-          return activityBadge(activity, cleanActivity)
-        case 'Write a great app!':
-          return activityBadge(activity, appActivity)
+          switch(activity.name) {
+            case 'Run around the track':
+              return activityBadge(activity, runActivity)
+            case 'Fitness course':
+              return activityBadge(activity, fitActivity)
+            case 'Horse racing track':
+              return activityBadge(activity, racingActivity)
+            case 'Denmark Vesey Statue':
+              return activityBadge(activity, denmarkActivity)
+            case 'Band Stand':
+              return activityBadge(activity, bandActivity)
+            case 'Keep the park clean':
+              return activityBadge(activity, cleanActivity)
+            case 'Run around the lake':
+              return activityBadge(activity, lakeActivity)
+            case 'Learn about nature':
+              return activityBadge(activity, natureActivity)
+            case 'Learn about the plants':
+              return activityBadge(activity, learnActivity)
+            case 'Go to the Pier':
+              return activityBadge(activity, pierActivity)
+            case 'Find Charleston landmarks':
+              return activityBadge(activity, landmarkActivity)
+            case 'Learn about the plants, animals and marsh':
+              return activityBadge(activity, marshActivity)
+          }
       }
-  }
 
 
     return (

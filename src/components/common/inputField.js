@@ -1,6 +1,8 @@
 import React from 'react'
 import { View, TextInput, Text } from 'react-native'
 
+
+
 const InputField = (props) => {
   return (
     <View style={styles.containerStyle} >
@@ -13,6 +15,7 @@ const InputField = (props) => {
                  keyboardType={props.keyboardType}
                  autoCorrect={props.autoCorrect}
                  underlineColorAndroid={'transparent'}
+                 allowFontScaling
       />
     </View>
   )
