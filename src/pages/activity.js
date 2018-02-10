@@ -34,8 +34,12 @@ class Activity extends Component {
       const denmarkActivity = require('../images/denmark-vesey-statue.jpg')
       const bandActivity = require('../images/hampton-park-bandstand.jpg')
       const cleanActivity = require('../images/keep-clean-sign.jpg')
-      const lakeActivity = require('../images/wooden-sailing-boat.jpg')
-      const appActivity = require('../images/junior-ranger.png')
+      const lakeActivity = require('../images/evening-over-colonial-lake.jpg')
+      const learnActivity = require('../images/junior-ranger.png')
+      const landmarkActivity = require('../images/StPhilips.jpg')
+      const natureActivity = require('../images/Colonial-Lake-flowerbed.jpg')
+      const pierActivity = require('../images/demetre-park-sunlit-dock.jpg')
+      const marshActivity = require('../images/egret-demetre-park.jpg')
 
 
       switch(activity.name) {
@@ -49,16 +53,23 @@ class Activity extends Component {
           return activityBadge(activity, denmarkActivity)
         case 'Band Stand':
           return activityBadge(activity, bandActivity)
-        case 'Keep the park clean!':
+        case 'Keep the park clean':
           return activityBadge(activity, cleanActivity)
-        case 'Lake':
+        case 'Run around the lake':
           return activityBadge(activity, lakeActivity)
-        case 'Make the flowers pretty!':
-          return activityBadge(activity, cleanActivity)
-        case 'Write a great app!':
-          return activityBadge(activity, appActivity)
+        case 'Learn about nature':
+          return activityBadge(activity, natureActivity)
+        case 'Learn about the plants':
+          return activityBadge(activity, learnActivity)
+        case 'Go to the Pier':
+          return activityBadge(activity, pierActivity)
+        case 'Find Charleston landmarks':
+          return activityBadge(activity, landmarkActivity)
+        case 'Learn about the plants, animals and marsh':
+          return activityBadge(activity, marshActivity)
       }
-    }
+  }
+
 
     return(
       <ScrollView>
@@ -70,7 +81,7 @@ class Activity extends Component {
           <View style={styles.textBlock}>
             <Image style={styles.parkerImage}
                    source={require('../images/parker-bear-original-painting.jpg')} />
-            <View>
+            <View style={{ width: width * .8 }} >
               <Text style={{ fontSize: 20, paddingLeft: 10, paddingTop: 20 }} >
                 Lets {selActivity.header} {props.selectedChild.name}!</Text>
             </View>

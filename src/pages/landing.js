@@ -1,8 +1,7 @@
 import React from 'react'
 import { Dimensions, View, Text, StyleSheet, Image, ScrollView } from 'react-native'
-import { Router } from 'react-router-native'
+import { Router, Link } from 'react-router-native'
 import { connect  } from 'react-redux'
-import { Link } from 'react-router-native'
 import { Card, CardSection } from '../components/common'
 
 

@@ -9,6 +9,7 @@
 ## Open items;
 
 ### 1) Android app for some reason is not adding childID to FIRST child created, but is adding for second child.
-  
+### 2) If data is entered in e-mail field in Login, then Back is clicked to go to Signin (Login to Signon), the e-mail data is still there...need to reset State on Back.
+
 
 ### Completed items;
