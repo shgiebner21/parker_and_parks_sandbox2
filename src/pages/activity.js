@@ -5,6 +5,7 @@ import { Link } from 'react-router-native'
 import firebase from 'firebase'
 import { Card, CardSection } from '../components/common'
 import { filter, map, reduce, compose } from 'ramda'
+import Images from '../resources/images'
 
 
 class Activity extends Component {
@@ -28,45 +29,31 @@ class Activity extends Component {
    }
 
     const activityImage = (activity) => {
-      const runActivity = require('../images/Hampton-Park-track.jpg')
-      const fitActivity = require('../images/fitness-course.jpg')
-      const racingActivity = require('../images/horse-racing.jpg')
-      const denmarkActivity = require('../images/denmark-vesey-statue.jpg')
-      const bandActivity = require('../images/hampton-park-bandstand.jpg')
-      const cleanActivity = require('../images/keep-clean-sign.jpg')
-      const lakeActivity = require('../images/evening-over-colonial-lake.jpg')
-      const learnActivity = require('../images/junior-ranger.png')
-      const landmarkActivity = require('../images/StPhilips.jpg')
-      const natureActivity = require('../images/Colonial-Lake-flowerbed.jpg')
-      const pierActivity = require('../images/demetre-park-sunlit-dock.jpg')
-      const marshActivity = require('../images/egret-demetre-park.jpg')
-
-
       switch(activity.name) {
         case 'Run around the track':
-          return activityBadge(activity, runActivity)
+          return activityBadge(activity, Images.runActivity)
         case 'Fitness course':
-          return activityBadge(activity, fitActivity)
+          return activityBadge(activity, Images.fitActivity)
         case 'Horse racing track':
-          return activityBadge(activity, racingActivity)
+          return activityBadge(activity, Images.racingActivity)
         case 'Denmark Vesey Statue':
-          return activityBadge(activity, denmarkActivity)
+          return activityBadge(activity, Images.denmarkActivity)
         case 'Band Stand':
-          return activityBadge(activity, bandActivity)
+          return activityBadge(activity, Images.bandActivity)
         case 'Keep the park clean':
-          return activityBadge(activity, cleanActivity)
+          return activityBadge(activity, Images.cleanActivity)
         case 'Run around the lake':
-          return activityBadge(activity, lakeActivity)
+          return activityBadge(activity, Images.lakeActivity)
         case 'Learn about nature':
-          return activityBadge(activity, natureActivity)
+          return activityBadge(activity, Images.natureActivity)
         case 'Learn about the plants':
-          return activityBadge(activity, learnActivity)
+          return activityBadge(activity, Images.learnActivity)
         case 'Go to the Pier':
-          return activityBadge(activity, pierActivity)
+          return activityBadge(activity, Images.pierActivity)
         case 'Find Charleston landmarks':
-          return activityBadge(activity, landmarkActivity)
+          return activityBadge(activity, Images.landmarkActivity)
         case 'Learn about the plants, animals and marsh':
-          return activityBadge(activity, marshActivity)
+          return activityBadge(activity, Images.marshActivity)
       }
   }
 

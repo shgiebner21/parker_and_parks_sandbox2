@@ -15,7 +15,7 @@ const InputField = (props) => {
                  keyboardType={props.keyboardType}
                  autoCorrect={props.autoCorrect}
                  underlineColorAndroid={'transparent'}
-                 allowFontScaling
+                 allowFontScaling={true}
       />
     </View>
   )
