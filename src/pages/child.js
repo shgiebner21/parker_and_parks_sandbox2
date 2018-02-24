@@ -5,6 +5,8 @@ import { Link } from 'react-router-native'
 import firebase from 'firebase'
 import { Card, CardSection } from '../components/common'
 import { map, filter, compose, sort, take } from 'ramda'
+import MapView from 'react-native-maps'
+import CPCMapMarker from '../images/smallParkIcon-1.png'
 
 
 const updateChildId = (child, id) => {
@@ -80,20 +82,24 @@ class Child extends Component {
         return ( take(5, child) )
     }
 
+    const allParkObj = Object.values(props.parks)
 
-    const renderParks = (park, sectionID, parkID) => {
-      return (
-        (park.parkName)
-          ? <TouchableOpacity key={park.parkName} >
-              <Link to={'/park/' + parkID}>
-                <Text style={styles.parkStyle} >
-                  {park.parkName}
-                </Text>
-              </Link>
-            </TouchableOpacity>
-          : <View></View>
-      )
+    const allParksMarkers = (allParkObj, history) => {
+      const parkList = []
+
+      const parkArr = map(park => parkList.push(park), allParkObj)
+
+      const park = parkList === [] ? <View><Text>No Parks</Text></View>
+        : map( park => <MapView.Marker coordinate={ park.region }
+                                 onPress={e => history.push('/park/' + park.parkId) }
+                                 key={park.parkName}
+                                 title={park.parkName}
+                                 image={CPCMapMarker}
+                       />, parkList)
+       return park
     }
+
+
     const renderSiblings = (sibling, sectionID, childID) => {
       return (
         (sibling.name !== props.selectedChild.name)
@@ -182,13 +188,25 @@ class Child extends Component {
           </CardSection>
 
           <CardSection>
-            <Text style={{ fontWeight: 'bold' }} >I want to go to => </Text>
-            <View>
-              <ListView enableEmptySections
-                        dataSource={this.props.parksDS}
-                        renderRow={ (rowData, sectionID, rowID) =>
-                        renderParks(rowData, sectionID, rowID) }
-                />
+
+            <View style={{ width: width * .95, flexDirection: 'column' }} >
+              <Text style={{ fontWeight: 'bold', paddingBottom: 5 }} >Which Park do I want to go to? </Text>
+
+              <View style={{ flex: 1 }} >
+                <MapView
+                  style={{ flex: 1, height: 250 }}
+                  initialRegion={{
+                  latitude: 32.7771211,
+                  longitude: -79.9406442,
+                  latitudeDelta: 0.0700,
+                  longitudeDelta: 0.0400
+                  }}
+                >
+
+                  { allParksMarkers(allParkObj, props.history) }
+
+                </MapView>
+              </View>
             </View>
           </CardSection>
 
