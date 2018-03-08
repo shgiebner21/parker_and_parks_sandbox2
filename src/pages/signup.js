@@ -219,12 +219,18 @@ const mapActionsToProps = (dispatch) => ({
       }
 
       if ( email === emailCheck(email, famList)) {
-
       }
 
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-          .then( user => loginUserSuccess(dispatch, user, history, parentFirst, parentLast, cellPhone, city, state, email) )
-          .catch( () => loginUserFail(dispatch) )
+{/* regExPhone allows for multiple phone formats but also checks that
+    the number is valid */}
+      let regExPhone = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/
+      if ( !regExPhone.test(cellPhone) ) {
+        return alert('Please enter a valid phone number.')
+      }
+
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then( user => loginUserSuccess(dispatch, user, history, parentFirst, parentLast, cellPhone, city, state, email) )
+        .catch( () => loginUserFail(dispatch) )
   }
 })
 

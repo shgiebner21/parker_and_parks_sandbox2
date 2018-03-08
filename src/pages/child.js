@@ -196,8 +196,8 @@ class Child extends Component {
                 <MapView
                   style={{ flex: 1, height: 250 }}
                   initialRegion={{
-                  latitude: 32.7771211,
-                  longitude: -79.9406442,
+                  latitude: 32.7791211,
+                  longitude: -79.949042,
                   latitudeDelta: 0.0700,
                   longitudeDelta: 0.0400
                   }}
