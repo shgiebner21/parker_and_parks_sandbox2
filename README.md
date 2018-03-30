@@ -1,5 +1,11 @@
 # parker_and_parks
 
+
+## To run on simulator;
+### react-native run-ios
+### react-native run-android
+
+
 ## A mobile application created using react-native init
 ## This is the Android version of the application
 
