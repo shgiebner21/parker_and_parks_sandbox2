@@ -25,6 +25,7 @@
     "babel-jest": "22.0.3",
     "babel-preset-react-native": "4.0.0",
     "jest": "22.0.3",
+    "react-native-dotenv": "^0.1.1",
     "react-test-renderer": "16.0.0"
   },
   "jest": {
