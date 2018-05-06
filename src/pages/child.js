@@ -196,11 +196,13 @@ class Child extends Component {
                 <MapView
                   style={{ flex: 1, height: 250 }}
                   initialRegion={{
-                  latitude: 32.7791211,
-                  longitude: -79.949042,
-                  latitudeDelta: 0.0700,
-                  longitudeDelta: 0.0400
+                    latitude: 32.7791211,
+                    longitude: -79.949042,
+                    latitudeDelta: 0.0700,
+                    longitudeDelta: 0.0400
                   }}
+                  mapType={"mutedStandard"}
+                  scrollEnabled={"false"}
                 >
 
                   { allParksMarkers(allParkObj, props.history) }
