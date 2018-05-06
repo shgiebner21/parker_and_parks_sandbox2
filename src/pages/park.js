@@ -65,6 +65,74 @@ class Park extends Component {
               return activityBadge(activity, Images.landmarkActivity)
             case 'Learn about the plants, animals and marsh':
               return activityBadge(activity, Images.marshActivity)
+            case 'Meet new people':
+              return activityBadge(activity, Images.placeholderActivity)
+            case 'Find a tree with red bark':
+              return activityBadge(activity, Images.placeholderActivity)
+            case 'Gazebo':
+              return activityBadge(activity, Images.bandActivity)
+            case 'Can you find the Horse Stables':
+              return activityBadge(activity, Images.placeholderActivity)
+            case 'Bonus':
+              return activityBadge(activity, Images.placeholderActivity)
+            case 'Water the community garden':
+              return activityBadge(activity, Images.magnoliaGardenActivity)
+            case 'Run around the field':
+              return activityBadge(activity, Images.placeholderActivity)
+            case 'Run in the park':
+              return activityBadge(activity, Images.marionSquareActivity)
+            case 'Find a flowering plant':
+              return activityBadge(activity, Images.placeholderActivity)
+            case 'Find a Palmetto tree':
+              return activityBadge(activity, Images.marionSquarePalmetto)
+            case 'Learn about Oyster Tabby Rock':
+              return activityBadge(activity, Images.findHornWorkActivity)
+            case 'Say Hi! to a Fireman (or Woman!)':
+              return activityBadge(activity, Images.plymouthFireEngine)
+            case 'Play in the playground':
+              return activityBadge(activity, Images.plymouthParkPlayground)
+            case 'Count the trees':
+              return activityBadge(activity, Images.placeholderActivity)
+            case 'Find the current in the creek':
+              return activityBadge(activity, Images.plymouthParkCreek)
+            case 'Play some basketball':
+              return activityBadge(activity, Images.basketballActivity)
+            case 'Find the rain barrels':
+              return activityBadge(activity, Images.placeholderActivity)
+            case 'Find the big Chimneys':
+              return activityBadge(activity, Images.stacksActivity)
+            case 'Walk to the Pier':
+              return activityBadge(activity, Images.waterfrontPierActivity)
+            case 'Find the dog park and playground':
+              return activityBadge(activity, Images.placeholderActivity)
+            case 'Find the Big (really big) ship':
+              return activityBadge(activity, Images.yorktownActivity)
+            case 'Learn name of the bridge':
+              return activityBadge(activity, Images.ravenelBridgeActivity)
+            case 'Find Echo Rock':
+              return activityBadge(activity, Images.echoRockActivity)
+            case 'Find the fruit Fountain':
+              return activityBadge(activity, Images.waterfrontFountainActivity)
+            case 'Ride your bike':
+              return activityBadge(activity, Images.westAshleyBiking)
+            case 'Learn about the Greenway':
+              return activityBadge(activity, Images.westAshleyLearn)
+            case 'Find the East Coast Greenway sign':
+              return activityBadge(activity, Images.westAshleySign)
+            case 'How long is the Greenway':
+              return activityBadge(activity, Images.placeholderActivity)
+            case 'Run to the Gazebo':
+              return activityBadge(activity, Images.whitePointGazebo)
+            case 'Find the Fort placques':
+              return activityBadge(activity, Images.whitePointPlaque)
+            case 'Count the park benches':
+              return activityBadge(activity, Images.whitePointBench)
+            case 'Find the Fountain':
+              return activityBadge(activity, Images.whitePointFountain)
+            case 'Find the Oldest tree':
+              return activityBadge(activity, Images.whitePointOaks)
+            case 'Count the Big Oak trees':
+              return activityBadge(activity, Images.whitePointOakTrees)
           }
       }
 

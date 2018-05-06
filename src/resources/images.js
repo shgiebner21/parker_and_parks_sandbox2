@@ -15,7 +15,31 @@ const images = {
   landmarkActivity: require('../images/StPhilips.jpg'),
   natureActivity: require('../images/Colonial-Lake-flowerbed.jpg'),
   pierActivity: require('../images/demetre-park-sunlit-dock.jpg'),
-  marshActivity: require('../images/egret-demetre-park.jpg')
+  marshActivity: require('../images/egret-demetre-park.jpg'),
+  stacksActivity: require('../images/StJulianDevine_stacks.jpg'),
+  basketballActivity: require('../images/basketball-hoop-clipart.jpg'),
+  findHornWorkActivity: require('../images/remnantOfHornWork.jpg'),
+  marionSquareActivity: require('../images/marionSquare.jpg'),
+  marionSquarePalmetto: require('../images/marion-square-palmetto.jpg'),
+  waterfrontPierActivity: require('../images/waterfrontParkPier.jpg'),
+  waterfrontFountainActivity: require('../images/waterfront-park-fountain.jpg'),
+  ravenelBridgeActivity: require('../images/ravenel-from-waterfront-park.jpg'),
+  yorktownActivity: require('../images/yorktown-from-waterfront.jpg'),
+  echoRockActivity: require('../images/echoRock.jpg'),
+  whitePointGazebo: require('../images/whitePointGardensGazebo.jpg'),
+  whitePointPlaque: require('../images/gentlemanPiratePlaque.jpg'),
+  whitePointOaks: require('../images/whitePointOaks2.jpg'),
+  whitePointOakTrees: require('../images/whitePointOaks.jpg'),
+  whitePointBench: require('../images/whitePointBench.jpg'),
+  whitePointFountain: require('../images/whitePointFountain.jpg'),
+  magnoliaGardenActivity: require('../images/magnoliaGarden.jpeg'),
+  westAshleyBiking: require('../images/westAshleyBikes.jpg'),
+  westAshleySign: require('../images/westAshleySign.jpg'),
+  westAshleyLearn: require('../images/westAshleyMarsh.jpeg'),
+  plymouthFireEngine: require('../images/plymouthFireEngine.jpg'),
+  plymouthParkCreek: require('../images/plymouthParkCreek.jpg'),
+  plymouthParkPlayground: require('../images/plymouthParkPlayground.jpeg'),
+  placeholderActivity: require('../images/CPC-small-logo.png')
 }
 
 export default images
