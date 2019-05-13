@@ -39,7 +39,7 @@ const images = {
   plymouthFireEngine: require('../images/plymouthFireEngine.jpg'),
   plymouthParkCreek: require('../images/plymouthParkCreek.jpg'),
   plymouthParkPlayground: require('../images/plymouthParkPlayground.jpeg'),
-  placeholderActivity: require('../images/CPC-small-logo.png')
+  placeholderActivity: require('../images/evening-over-colonial-lake.jpg')
 }
 
 export default images

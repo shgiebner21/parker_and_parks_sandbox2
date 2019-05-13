@@ -24,9 +24,6 @@ const postChild = (name, nameLast, age, gender, notes, type, points, fitness, sa
 }
 
 const postChildId = (childId, famID, kidID) => {
-  console.log('inside postChildId, childId is, ', childId)
-  console.log('inside postChildId, famID is, ', famID)
-  console.log('inside postChildId, kidID is, ', kidID)
 
   return (
     firebase.database().ref(`/children/${famID}/${kidID}`)
@@ -40,7 +37,6 @@ class AddChildren extends Component {
 
   render() {
     const props = this.props
-    console.log('addChildren props are, ', props)
 
     return (
       <Card>

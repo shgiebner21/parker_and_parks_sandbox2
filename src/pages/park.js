@@ -16,8 +16,6 @@ class Park extends Component {
   render() {
     const props = this.props
     const { width, height } = Dimensions.get('window')
-    console.log('park props are, ', props)
-
 
     const activityBadge = (activity, image) => {
       return (
@@ -27,7 +25,7 @@ class Park extends Component {
               <Image style={styles.activityStyle} source={ image } />
               <View>
                 <Text style={{ paddingLeft: 10 }} key={activity.name} >{activity.name}</Text>
-                <Text style={{ paddingLeft: 10, fontWeight: 'bold' }} >{activity.pointValue} Parker points!</Text>
+                <Text style={{ paddingLeft: 10, fontWeight: 'bold' }} >{activity.pointValue} Park points!</Text>
               </View>
             </View>
           </Link>
@@ -37,7 +35,7 @@ class Park extends Component {
 
 //Thought about tucking listActivity and activityImage in a functions folder to reduce
 //code, but park.js & activity.js activityBadge functions are different & increase complexity.
-//I am only using twice so not worth the tiem / complexity.
+//I am only using twice so not worth the time / complexity.
 
         const listActivity = (activity) => {
           switch(activity.name) {
@@ -143,8 +141,8 @@ class Park extends Component {
 
           <CardSection>
             <View style={{ width: width * .70, flexDirection: 'row' }} >
-              <Image style={styles.parkerImage}
-                     source={require('../images/parker-bear-original-painting.jpg')} />
+              <Image style={styles.puppyImage}
+                     source={require('../images/peter_puppy.jpg')} />
 
                <View style={{ flexDirection: 'column' }} >
 
@@ -167,7 +165,7 @@ class Park extends Component {
             <TouchableOpacity>
               <Link to={'/child/' + props.selectedChild.familyId + '/' + props.selectedChild.childId }>
                 <View>
-                  <Text style={styles.buttonStyle} >My Page</Text>
+                  <Text style={styles.buttonStyle} > My Page </Text>
                 </View>
               </Link>
             </TouchableOpacity>
@@ -180,7 +178,7 @@ class Park extends Component {
 }
 
 const styles = {
-  parkerImage: {
+  puppyImage: {
     width: 80,
     height: 80,
     borderColor: '#e6917d',

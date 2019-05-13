@@ -16,15 +16,13 @@ const LandingPage = () => {
           <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} >
 
             <Image style={styles.cpcImage}
-                source={require('../images/CPC-small-logo.png')} />
+                source={require('../images/evening-over-colonial-lake.jpg')} />
 
-              <Image style={styles.parkerImage}
-                 source={require('../images/parker-bear-original-painting.jpg')} />
+              <Image style={styles.puppyImage}
+                 source={require('../images/peter_puppy.jpg')} />
 
-              <Text style={{ fontSize: 20, alignSelf: 'center' }} >Hi!  I'm Parker Bear.</Text>
-              <Text style={{ fontSize: 20, alignSelf: 'center' }} >Welcome to my Playground!</Text>
-              <Text style={{ fontSize: 20, marginBottom: 20, alignSelf: 'center' }} >
-                There are TEN great parks to play in so let's get started!</Text>
+              <Text style={{ fontSize: 20, alignSelf: 'center' }} >Hi!  I'm Petey the Puppy and I love to play in the parks in Charleston.</Text>
+              <Text style={{ fontSize: 20, marginBottom: 20, alignSelf: 'center' }} >There are TEN great parks to play in so let's get started!</Text>
 
               <View style={{ alignSelf: 'center', marginBottom: 30 }}>
               <Link to='/signup'
@@ -45,17 +43,17 @@ const LandingPage = () => {
 }
 
 const styles = StyleSheet.create({
-  parkerImage: {
-    width: 120,
-    height: 120,
+  puppyImage: {
+    width: 110,
+    height: 110,
     alignSelf: 'center',
     borderColor: '#e6917d',
     borderWidth: 3,
     borderRadius: 55,
-    marginBottom: 30
+    marginBottom: 30,
   },
   cpcImage: {
-    width: 150,
+    width: 300,
     height: 210,
     alignSelf: 'center',
     marginTop: 5,
