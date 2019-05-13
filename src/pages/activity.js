@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { View, List, Text, Image, TouchableOpacity, ScrollView, Dimensions } from 'react-native'
+import { View, Text, Image, TouchableOpacity, ScrollView, Dimensions } from 'react-native'
 import { Link } from 'react-router-native'
 import firebase from 'firebase'
-import { Card, CardSection } from '../components/common'
+import { Card } from '../components/common'
 import { filter, map, reduce, compose } from 'ramda'
 import Images from '../resources/images'
 
@@ -13,7 +13,6 @@ class Activity extends Component {
   render() {
     const props = this.props
     const { width, height } = Dimensions.get('window')
-    console.log('activity props are, ', props)
 
     const selActivity = filter(act => act.id === Number(props.location.pathname.replace('/activity/', '')),
                    props.park.activity).pop()
@@ -134,8 +133,8 @@ class Activity extends Component {
           </View>
 
           <View style={styles.textBlock}>
-            <Image style={styles.parkerImage}
-                   source={require('../images/parker-bear-original-painting.jpg')} />
+            <Image style={styles.puppyImage}
+                   source={require('../images/peter_puppy.jpg')} />
             <View style={{ width: width * .8 }} >
               <Text style={{ fontSize: 20, paddingLeft: 10, paddingTop: 20 }} >
                 Lets {selActivity.header} {props.selectedChild.name}!</Text>
@@ -162,7 +161,7 @@ class Activity extends Component {
                     <View style={styles.innerTextBlock} >
                       <Image style={styles.pawStyle}
                              source={require('../images/parker-paw-2.png')} />
-                      <Text style={{ marginLeft: 5 }}>Yes, I did! I just earned {selActivity.pointValue} Parker points!</Text>
+                      <Text style={{ marginLeft: 5 }}>Yes, I did! I just earned {selActivity.pointValue} Park points!</Text>
                     </View>
                 </TouchableOpacity>
 
@@ -196,7 +195,7 @@ const styles = {
     position: 'relative',
     marginTop: 5
   },
-  parkerImage: {
+  puppyImage: {
     width: 80,
     height: 80,
     borderColor: '#e6917d',

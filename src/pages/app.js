@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View, YellowBox } from 'react-native'
 import NativeTachyons from 'react-native-style-tachyons'
 import { NativeRouter, Route, Switch } from 'react-router-native'
 import { Provider } from 'react-redux'
 import { API_KEY, DOMAIN, DB_URL, SENDER_ID } from 'react-native-dotenv'
 import firebase from 'firebase'
+
+
 import store from '../../store'
 import LandingPage from './landing'
 import SignupForm from './signup'
@@ -14,7 +16,6 @@ import Family from './family'
 import Child from './child'
 import Park from './park'
 import Activity from './activity'
-
 
 NativeTachyons.build({ rem: 16 }, StyleSheet)
 
@@ -32,6 +33,9 @@ class App extends Component {
 
 
   render() {
+
+    console.disableYellowBox = true
+    
     return (
       <NativeRouter>
         <View>

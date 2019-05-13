@@ -80,7 +80,7 @@ class LoginForm extends Component {
 
           <View>
             <Image style={styles.cpcImage}
-                    source={require('../images/CPC-small-logo.png')} />
+                    source={require('../images/evening-over-colonial-lake.jpg')} />
           </View>
 
         </Card>
@@ -104,8 +104,8 @@ const styles = {
     marginTop: 10
   },
   cpcImage: {
-    width: 90,
-    height: 130,
+    width: 300,
+    height: 210,
     alignSelf: 'center',
     marginTop: 20,
 

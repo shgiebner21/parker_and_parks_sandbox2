@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { View, Text, StyleSheet, Image, TouchableOpacity, ListView, ScrollView, Dimensions } from 'react-native'
+import { View, Text, Platform, Image, TouchableOpacity, ListView, ScrollView, Dimensions } from 'react-native'
 import { Link } from 'react-router-native'
 import firebase from 'firebase'
 import { Card, CardSection } from '../components/common'
 import { map, filter, compose, sort, take } from 'ramda'
 import MapView from 'react-native-maps'
-import CPCMapMarker from '../images/smallParkIcon-1.png'
+import CPCMapMarker from '../images/small_pineapple_Icon.png'
 
 
 const updateChildId = (child, id) => {
@@ -49,7 +49,6 @@ class Child extends Component {
   render() {
     const props = this.props
     const { width, height } = Dimensions.get('window')
-    console.log('child props are, ', props)
 
     const familyChildren = map(child => child, Object.values(props.children))
     const familyRank = (children) => {
@@ -89,7 +88,9 @@ class Child extends Component {
 
       const parkArr = map(park => parkList.push(park), allParkObj)
 
-      const park = parkList === [] ? <View><Text>No Parks</Text></View>
+      const park = parkList === [] 
+        ? <View><Text>No Parks</Text></View>
+
         : map( park => <MapView.Marker coordinate={ park.region }
                                  onPress={e => history.push('/park/' + park.parkId) }
                                  key={park.parkName}
@@ -126,8 +127,8 @@ class Child extends Component {
           <CardSection>
             <View style={{ width: width * .80, paddingTop: 10, flexDirection: 'row' }} >
 
-              <Image style={styles.parkerImage}
-                     source={require('../images/parker-bear-original-painting.jpg')} />
+              <Image style={styles.puppyImage}
+                     source={require('../images/peter_puppy.jpg')} />
 
               <View style={{ flexDirection: 'column' }} >
 
@@ -135,7 +136,7 @@ class Child extends Component {
                     Hi { props.selectedChild.name }!</Text>
 
                   <Text style={{ paddingLeft: 10}} >
-                    Welcome to your very own Parker home page!</Text>
+                    Welcome to your very own home page!</Text>
               </View>
             </View>
           </CardSection>
@@ -162,7 +163,7 @@ class Child extends Component {
 
           <CardSection>
             <View style={styles.otherPts}>
-              <Text style={styles.parkerPts}>Parker points: {props.selectedChild.points}</Text>
+              <Text style={styles.parkPts}>Park points: {props.selectedChild.points}</Text>
               <Text>Fitness points: {props.selectedChild.fitness}</Text>
               <Text>Scholar points: {props.selectedChild.learning}</Text>
               <Text>Volunteer points: {props.selectedChild.samaritan}</Text>
@@ -187,8 +188,8 @@ class Child extends Component {
             </View>
           </CardSection>
 
+          {/* Map section of page  */}
           <CardSection>
-
             <View style={{ width: width * .95, flexDirection: 'column' }} >
               <Text style={{ fontWeight: 'bold', paddingBottom: 5 }} >Which Park do I want to go to? </Text>
 
@@ -201,12 +202,12 @@ class Child extends Component {
                     latitudeDelta: 0.0700,
                     longitudeDelta: 0.0400
                   }}
-                  mapType={"mutedStandard"}
-                  scrollEnabled={"false"}
+                  mapType={Platform.OS === 'ios'
+                    ? "mutedStandard"
+                    : "standard"}
+                  scrollEnabled={false}
                 >
-
                   { allParksMarkers(allParkObj, props.history) }
-
                 </MapView>
               </View>
             </View>
@@ -228,10 +229,7 @@ class Child extends Component {
 
             </View>
 
-
-
           </CardSection>
-
 
         </Card>
       </ScrollView>
@@ -240,7 +238,7 @@ class Child extends Component {
 }
 
 const styles = {
-  parkerImage: {
+  puppyImage: {
     width: 80,
     height: 80,
     borderColor: '#e6917d',
@@ -260,7 +258,7 @@ const styles = {
     borderWidth: 1,
     borderColor: '#007aff'
   },
-  parkerPts: {
+  parkPts: {
     fontSize: 16,
     fontWeight: '600'
   },

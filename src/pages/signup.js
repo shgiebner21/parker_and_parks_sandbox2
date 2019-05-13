@@ -138,7 +138,7 @@ class SignupForm extends Component {
 
           <View>
             <Image style={styles.cpcImage}
-                    source={require('../images/CPC-small-logo.png')} />
+                    source={require('../images/evening-over-colonial-lake.jpg')} />
           </View>
         </Card>
       </ScrollView>
@@ -161,10 +161,11 @@ const styles = {
     marginTop: 10
   },
   cpcImage: {
-    width: 90,
-    height: 130,
+    width: 180,
+    height: 200,
     alignSelf: 'center',
     marginTop: 20,
+    marginBottom: 20
 
   },
   textStyle: {
