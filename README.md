@@ -19,8 +19,13 @@
 
 ## Open items;
 
-### 1) Android app for some reason is not adding childID to FIRST child created, but is adding for second child.
-### 2) If data is entered in e-mail field in Login, then Back is clicked to go to Signin (Login to Signon), the e-mail data is still there...need to reset State on Back.
+### 1) Whne entering a new family, it would not accept the "Done" button click.  Kept giving me "required data missing."
 
 
 ### Completed items;
+
+### 1) Android app for some reason is not adding childID to FIRST child created, but is adding for second child.
+   ### 1a) Just tried it again and was unable to recreate
+
+   ### 2) If data is entered in e-mail field in Login, then Back is clicked to go to Signin (Login to Signon), the e-mail data is still there...need to reset State on Back.
+   ### 2a) I'm going to leave this, I don't mind it that much.
