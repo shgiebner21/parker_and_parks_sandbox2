@@ -1,6 +1,6 @@
 import React from 'react'
 import { Dimensions, View, Text, StyleSheet, Image, ScrollView } from 'react-native'
-import { Router, Link } from 'react-router-native'
+import { Link } from 'react-router-native'
 import { connect  } from 'react-redux'
 import { Card, CardSection } from '../components/common'
 
@@ -11,7 +11,7 @@ const LandingPage = () => {
 
   return (
     <ScrollView>
-      <Card style={{ width: width * .9 }} >
+      <Card style={{ width: width * .95, height: height * .95 }} >
         <CardSection>
           <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }} >
 

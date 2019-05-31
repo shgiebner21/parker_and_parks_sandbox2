@@ -70,7 +70,8 @@ class Child extends Component {
       const childArr = map(allChildren =>
         map(child => childrenList.push(child), allChildren), allChildrenObj)
 
-      const child = childrenList === [] ? <View><Text>No children</Text></View>
+      const child = childrenList === [] 
+          ? <View><Text>No children</Text></View>
           : compose(
               map(child => <View key={child.name}>
                              <Text>{child.name} { take(1, child.nameLast) }: {child.points}</Text>
@@ -101,7 +102,7 @@ class Child extends Component {
     }
 
 
-    const renderSiblings = (sibling, sectionID, childID) => {
+    const renderSiblings = (sibling, childID) => {
       return (
         (sibling.name !== props.selectedChild.name)
             ? <TouchableOpacity style={styles.sibButton}  title={sibling.name}
@@ -218,7 +219,7 @@ class Child extends Component {
               <ListView enableEmptySections
                         dataSource={this.props.childrenDataSource}
                         renderRow={ (rowData, sectionID, rowID) =>
-                        renderSiblings(rowData, sectionID, rowID) }
+                        renderSiblings(rowData, rowID) }
                         />
 
               <View style={{ height: height * .25 }} >
