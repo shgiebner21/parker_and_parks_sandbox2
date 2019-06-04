@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "expo": "^24.0.2",
-    "firebase": "^4.8.1",
+    "firebase": "^4.8.0",
     "moment": "^2.20.1",
     "pouchdb-http": "^6.0.2",
     "ramda": "^0.25.0",
