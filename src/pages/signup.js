@@ -212,7 +212,7 @@ const mapActionsToProps = (dispatch) => ({
   changeState: (txt) => dispatch({ type: 'SET_STATE', payload: txt }),
   changeEmail: (txt) => dispatch({ type: 'SET_EMAIL', payload: txt }),
   changePassword: (txt) => dispatch({ type: 'SET_PASSWORD', payload: txt }),
-  onSignup: (email, password, history, parentFirst, parentLast, cellPhone, city, state, famList, families) => (e) => {
+  onSignup: (email, password, history, parentFirst, parentLast, cellPhone, city, state, famList) => (e) => {
     dispatch({ type: 'LOGGING_IN' })
 
       if ( parentFirst.length === 0 || parentLast.length === 0 ) {
@@ -231,7 +231,7 @@ const mapActionsToProps = (dispatch) => ({
 
       firebase.auth().createUserWithEmailAndPassword(email, password)
         .then( user => loginUserSuccess(dispatch, user, history, parentFirst, parentLast, cellPhone, city, state, email) )
-        .catch( () => loginUserFail(dispatch) )
+        .catch( (err) => loginUserFail(dispatch, err) )
   }
 })
 
@@ -246,7 +246,9 @@ const loginUserSuccess = (dispatch, user, history, parentFirst, parentLast, cell
     history.push(`/children`)
 
 }
-const loginUserFail = (dispatch) => {
+const loginUserFail = (dispatch, err) => {
+  alert(err)
+
   dispatch({ type: 'LOGIN_FAIL' })
 }
 

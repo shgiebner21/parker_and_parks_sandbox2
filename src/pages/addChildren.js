@@ -28,6 +28,7 @@ const postChildId = (childId, famID, kidID) => {
   return (
     firebase.database().ref(`/children/${famID}/${kidID}`)
       .update({ childId })
+      .catch( err => alert(err) )
   )
 }
 
@@ -53,6 +54,7 @@ class AddChildren extends Component {
                       value={pathOr('', ['children', 'childFirst'], props) }
                       onChangeText={ txt => props.changeChildFirst(txt) }
                       autoCorrect={false}
+                      autoFocus={true}
           />
         </CardSection>
         <CardSection>
@@ -149,7 +151,8 @@ const mapActionsToProps = (dispatch) => ({
 // to the database, so this approach yields cleaner data
     postChild(children.childFirst, family.parentLast, children.age, children.gender, children.notes,
               children.type, children.totalPoints, children.fitness, children.samaritan, children.learning, children.timeStamp, family.user.uid)
-                .then(child => postChildId(children.childId = child.path.pieces_[2], child.path.pieces_[1], child.path.pieces_[2]) )
+              .then(child => postChildId(child.path.pieces_[2], child.path.pieces_[1], child.path.pieces_[2]) )
+              .catch(err => alert(err))
                 history.push('/family')
   },
   submitAgain: (children, family, history) => (e) => {
@@ -159,12 +162,15 @@ const mapActionsToProps = (dispatch) => ({
     updateChildren(children, family.user.uid)
     postChild(children.childFirst, family.parentLast, children.age, children.gender, children.notes,
               children.type, children.totalPoints, children.fitness, children.samaritan, children.learning, children.timeStamp, family.user.uid)
-                .then(child => postChildId(children.childId = child.path.o[2], child.path.o[1], child.path.o[2]) )
+              .then(child => postChildId(child.path.pieces_[2], child.path.pieces_[1], child.path.pieces_[2]) )
+              .catch(err => alert(err))
 
       dispatch({ type: 'CLEAR_CHILDREN' })
       history.push('/children')
   }
 })
+
+
 const connector = connect(mapStateToProps, mapActionsToProps)
 
 export default connector(AddChildren)
