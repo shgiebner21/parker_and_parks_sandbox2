@@ -27,7 +27,7 @@ const familiesDS = (state=ds.cloneWithRows([]), action) => {
 const initialFamily = {
   parentFirst: '',
   parentLast: '',
-  cellPhone: '',
+  cellPhone: '', 
   city: '',
   state: '',
   eMail: '',
@@ -207,7 +207,8 @@ const store = createStore(
     badges,
     badgesDS,
     currActivitiesDS
-  })
+  }),
+  applyMiddleware(thunk)
 )
 
 export default store

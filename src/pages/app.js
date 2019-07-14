@@ -6,8 +6,8 @@ import { Provider } from 'react-redux'
 import { API_KEY, DOMAIN, DB_URL, SENDER_ID } from 'react-native-dotenv'
 import firebase from 'firebase'
 
-
 import store from '../../store'
+
 import LandingPage from './landing'
 import SignupForm from './signup'
 import LoginForm from './loginForm'
