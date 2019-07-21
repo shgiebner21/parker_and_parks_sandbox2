@@ -10,7 +10,8 @@ import ListChild from '../components/listChild'
 
 
 class Family extends Component {
-  componentWillMount() {
+  
+  componentDidMount() {
     this.props.familyFetch(this.props.family.user.uid)
   }
 

@@ -20,7 +20,8 @@ import Activity from './activity'
 NativeTachyons.build({ rem: 16 }, StyleSheet)
 
 class App extends Component {
-  componentWillMount() {
+
+  componentDidMount() {
     firebase.initializeApp( {
       apiKey: API_KEY,
       authDomain: DOMAIN,
