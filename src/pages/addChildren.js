@@ -45,7 +45,7 @@ class AddChildren extends Component {
         <View style={styles.viewStyle}>
           <Text style={styles.textStyle}>
             Tell us about your family!
-          </Text>
+          </Text> 
         </View>
 
         <CardSection>

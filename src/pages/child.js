@@ -42,7 +42,8 @@ const showBadges = badge => {
 
 
 class Child extends Component {
-  componentWillMount() {
+  
+  componentDidMount() {
     this.props.childFetch(this.props.location.pathname.replace('child', 'children'))
   }
 

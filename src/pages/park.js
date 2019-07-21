@@ -8,7 +8,8 @@ import { map, pathOr } from 'ramda'
 import Images from '../resources/images'
 
 class Park extends Component {
-  componentWillMount() {
+  
+  componentDidMount() {
     if (this.props.location.pathname !== '/park/')
     this.props.parkSet(this.props.location.pathname.replace('/park/', '/parks/'))
   }
