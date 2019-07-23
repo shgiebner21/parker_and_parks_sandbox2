@@ -145,6 +145,7 @@ const mapActionsToProps = (dispatch) => ({
       children.samaritan = 0
       children.learning = 0
     }
+
     updateChildren(children, family.user.uid)
 
 // just wanted to post children object but firebase insists on adding uid/children
@@ -159,6 +160,15 @@ const mapActionsToProps = (dispatch) => ({
     if ( !children.childFirst || !children.age ) {
       return alert('Required data is missing!')
     }
+    if (!children.notes) {
+      children.notes = ''
+    }
+    if (!children.fitness) {
+      children.fitness = 0
+      children.samaritan = 0
+      children.learning = 0
+    }
+
     updateChildren(children, family.user.uid)
     postChild(children.childFirst, family.parentLast, children.age, children.gender, children.notes,
               children.type, children.totalPoints, children.fitness, children.samaritan, children.learning, children.timeStamp, family.user.uid)
