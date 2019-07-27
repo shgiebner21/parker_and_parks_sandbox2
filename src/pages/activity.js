@@ -12,7 +12,7 @@ class Activity extends Component {
 
   render() {
     const props = this.props
-    const { width, height } = Dimensions.get('window')
+    const { width } = Dimensions.get('window')
 
     const selActivity = filter(act => act.id === Number(props.location.pathname.replace('/activity/', '')),
                    props.park.activity).pop()
@@ -151,7 +151,18 @@ class Activity extends Component {
               <Text style={{ fontSize: 16, paddingLeft: 10, paddingTop: 10 }}>
                 Did you {selActivity.body}? </Text>
 
-              <TouchableOpacity onPress={ e => this.props.appendActivity(
+              {props.family.user.email === 'guest@email.com'                   // guest users are not allowed to keep score
+                ?  <TouchableOpacity>
+                    <Link to={'/park/'} >
+                        <View style={styles.textBlock} >
+                          <Image style={styles.pawStyle}
+                                source={require('../images/parker-paw-2.png')} />
+                          <Text  style={{ marginLeft: 5 }}>Yes, I did!</Text>
+                        </View>
+                      </Link>
+                    </TouchableOpacity>
+
+                : <TouchableOpacity onPress={ e => this.props.appendActivity(
                                   selActivity,
                                   props.selectedChild,
                                   props.currActivitiesDS,
@@ -160,10 +171,11 @@ class Activity extends Component {
                                   props.history )} >
                     <View style={styles.innerTextBlock} >
                       <Image style={styles.pawStyle}
-                             source={require('../images/parker-paw-2.png')} />
+                            source={require('../images/parker-paw-2.png')} />
                       <Text style={{ marginLeft: 5 }}>Yes, I did! I just earned {selActivity.pointValue} Park points!</Text>
                     </View>
                 </TouchableOpacity>
+              }
 
                 <TouchableOpacity>
                   <Link to={'/park/'} >
@@ -240,7 +252,8 @@ const mapStateToProps = (state) => ({
   selectedChild: state.selectedChild,
   park: state.park,
   badges: state.badges,
-  currActivitiesDS: state.currActivitiesDS
+  currActivitiesDS: state.currActivitiesDS,
+  family: state.family
 })
 const mapActionsToProps = (dispatch) => ({
   appendActivity: (activity, child, currActs, park, badges, history) => {

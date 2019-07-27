@@ -57,11 +57,19 @@ class Family extends Component {
               />
             </ScrollView>
           </CardSection>
+
           <CardSection>
-            <Link to='/children' style={styles.buttonStyle} >
-              <Text style={styles.buttonText} >Enter another child</Text>
-            </Link>
+            {props.family.user.email === 'guest@email.com'                                         // guest users are not allowed to enter children
+              ? <View style={styles.buttonStyle} >
+                  <Text style={styles.buttonText} >Please enjoy the parks as our guest!</Text>
+                </View>
+              : <Link to='/children' style={styles.buttonStyle} >
+                  <Text style={styles.buttonText} >Enter another child</Text>
+                </Link>
+            }
+
           </CardSection>
+
           <View>
             <Image style={styles.cpcImage}
                     source={require('../images/evening-over-colonial-lake.jpg')} />
