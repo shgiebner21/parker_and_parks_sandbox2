@@ -11,6 +11,7 @@ import store from '../../store'
 import LandingPage from './landing'
 import SignupForm from './signup'
 import LoginForm from './loginForm'
+import GuestForm from './guestForm'
 import AddChildren from './addChildren'
 import Family from './family'
 import Child from './child'
@@ -35,6 +36,7 @@ class App extends Component {
 
   render() {
 
+    // disables the annoying yellow warning box that shows at bottom of simulator
     console.disableYellowBox = true
     
     return (
@@ -44,6 +46,7 @@ class App extends Component {
           <Switch>
             <Route path='/signup' component={SignupForm} />
             <Route path='/login' component={LoginForm} />
+            <Route path='/guest' component={GuestForm} />
             <Route path='/children' component={AddChildren} />
             <Route path='/family' component={Family} />
             <Route path='/child' component={Child} />

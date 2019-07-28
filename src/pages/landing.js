@@ -24,7 +24,7 @@ const LandingPage = () => {
               <Text style={{ fontSize: 20, alignSelf: 'center' }} >Hi!  I'm Petey the Puppy and I love to play in the parks in Charleston.</Text>
               <Text style={{ fontSize: 20, marginBottom: 20, alignSelf: 'center' }} >There are TEN great parks to play in so let's get started!</Text>
 
-              <View style={{ alignSelf: 'center', marginBottom: 30 }}>
+            <View style={{ flexDirection: 'row', alignSelf: 'center', marginBottom: 30 }}>
               <Link to='/signup'
                     style={styles.signupButtonStyle} >
                   <Text style={styles.buttonText}>  Signup  </Text>
@@ -32,6 +32,10 @@ const LandingPage = () => {
               <Link to='/login'
                     style={styles.loginButtonStyle} >
                   <Text style={styles.buttonText}>   Login   </Text>
+              </Link>
+              <Link to='/guest'
+                    style={styles.signupButtonStyle} >
+                  <Text style={styles.buttonText}>   Guest   </Text>
               </Link>
             </View>
 
