@@ -194,6 +194,9 @@ class Child extends Component {
           <CardSection>
             <View style={{ width: width * .95, flexDirection: 'column' }} >
               <Text style={{ fontWeight: 'bold', paddingBottom: 5 }} >Which Park do I want to go to? </Text>
+              <Text cls='f5'>There are Ten parks on the map.</Text>
+              <Text cls='f5'>Click and hold on a pineapple to see the name of the park</Text>
+              <Text cls='f5'>Click on a pineapple to go a park and enjoy the activities!</Text>
 
               <View style={{ flex: 1 }} >
                 <MapView
@@ -222,12 +225,16 @@ class Child extends Component {
                         renderRow={ (rowData, sectionID, rowID) =>
                         renderSiblings(rowData, rowID) }
                         />
+              {props.selectedChild.name === 'Guest'
+                ? null
 
-              <View style={{ height: height * .25 }} >
-                <Link to='/family' style={styles.buttonStyle} >
-                  <Text style={styles.buttonText} >   Family   </Text>
-                </Link>
-              </View>
+                :  <View style={{ height: height * .25 }} >
+                     <Link to='/family' style={styles.buttonStyle} >
+                       <Text style={styles.buttonText} >   Family   </Text>
+                     </Link>
+                   </View>
+
+              }
 
             </View>
 

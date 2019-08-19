@@ -44,7 +44,7 @@ class SignupForm extends Component {
   }
 
   passwordText() {
-    if (this.props.family.password.length < 6) {
+    if (this.props.family.password && this.props.family.password.length < 6) {
           return <Text style={styles.errorText}>(password must have six or more characters)</Text>
     }
         return <Text style={{ color: 'grey' }}  >(password meets signup requirements)</Text>

@@ -43,11 +43,19 @@ class Family extends Component {
               Hi { view(lensProp('parentLast'), props.loginFamily) } family!</Text>
             </View>
           </View>
-          <View cls='ma2 h4 bb' >
-            <Text cls='f5'>Welcome to your very own family page!</Text>
-            <Text cls='f5'>Who wants to play first today?</Text>
-            <Text cls='f5'>Go to YOUR very own page and let's have some fun!</Text>
-          </View>
+          {props.family.user.email === 'guest@email.com'
+            ? <View cls='ma2 h4 bb' >
+                <Text cls='f5'>Welcome Guest, please enjoy our parks!</Text>
+                <Text cls='f5'>Click on the Guest button below and lets get started!</Text>
+              </View>
+
+            :  <View cls='ma2 h4 bb' >
+                 <Text cls='f5'>Welcome to your very own family page!</Text>
+                 <Text cls='f5'>Who wants to play first today?</Text>
+                 <Text cls='f5'>Go to YOUR very own page and let's have some fun!</Text>
+               </View>
+            }
+
           <CardSection>
             <ScrollView>
               <ListView enableEmptySections
@@ -60,9 +68,7 @@ class Family extends Component {
 
           <CardSection>
             {props.family.user.email === 'guest@email.com'                                         // guest users are not allowed to enter children
-              ? <View style={styles.buttonStyle} >
-                  <Text style={styles.buttonText} >Please enjoy the parks as our guest!</Text>
-                </View>
+              ? null
               : <Link to='/children' style={styles.buttonStyle} >
                   <Text style={styles.buttonText} >Enter another child</Text>
                 </Link>
