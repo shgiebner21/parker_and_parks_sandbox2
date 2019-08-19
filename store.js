@@ -55,7 +55,7 @@ const family = (state=initialFamily, action) => {
   case 'SET_FAMILY':
     return action.payload
   case 'LOGGING_IN':
-    return { loading: true, error: '', ...state }
+    return { loading: true, error: '' }
   case 'LOGIN_SUCCESS':
     return { user: action.payload, loading: false, error: '', ...state }
   case 'LOGIN_FAIL':

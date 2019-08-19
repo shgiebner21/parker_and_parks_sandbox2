@@ -46,7 +46,7 @@ class App extends Component {
           <Switch>
             <Route path='/signup' component={SignupForm} />
             <Route path='/login' component={LoginForm} />
-            <Route path='/guest' component={GuestForm} />
+            <Route path='/guest' component={Family} />
             <Route path='/children' component={AddChildren} />
             <Route path='/family' component={Family} />
             <Route path='/child' component={Child} />

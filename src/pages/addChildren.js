@@ -84,6 +84,7 @@ class AddChildren extends Component {
         <CardSection>
           <Button  onPress={props.submitAgain( props.children,
                                                props.family,
+                                               props.loginFamily,
                                                props.history )} >
             Enter another child
           </Button>
@@ -91,6 +92,7 @@ class AddChildren extends Component {
         <CardSection>
           <Button  onPress={props.submit( props.children,
                                           props.family,
+                                          props.loginFamily,
                                           props.history )} >
             Done!
           </Button>
@@ -125,14 +127,15 @@ const styles = {
 
 const mapStateToProps = (state) => ({
   family: state.family,
-  children: state.children
+  children: state.children,
+  loginFamily: state.loginFamily
 })
 const mapActionsToProps = (dispatch) => ({
   changeChildFirst: (txt) => dispatch({ type: 'SET_CHILD_NAME', payload: txt }),
   changeAge: (txt) => dispatch({ type: 'SET_CHILD_AGE', payload: txt }),
   changeGender: (txt) => dispatch({ type: 'SET_CHILD_GENDER', payload: txt }),
   changeNotes: (txt) => dispatch({ type: 'SET_CHILD_NOTES', payload: txt }),
-  submit: (children, family, history) => (e) => {
+  submit: (children, family, loginFamily, history) => (e) => {
 
     if ( !children.childFirst || !children.age ) {
       return alert('Required data is missing!')
@@ -150,13 +153,13 @@ const mapActionsToProps = (dispatch) => ({
 
 // just wanted to post children object but firebase insists on adding uid/children
 // to the database, so this approach yields cleaner data
-    postChild(children.childFirst, family.parentLast, children.age, children.gender, children.notes,
+    postChild(children.childFirst, loginFamily.parentLast, children.age, children.gender, children.notes,
               children.type, children.totalPoints, children.fitness, children.samaritan, children.learning, children.timeStamp, family.user.uid)
               .then(child => postChildId(child.path.pieces_[2], child.path.pieces_[1], child.path.pieces_[2]) )
               .catch(err => alert(err))
                 history.push('/family')
   },
-  submitAgain: (children, family, history) => (e) => {
+  submitAgain: (children, family, loginFamily, history) => (e) => {
     if ( !children.childFirst || !children.age ) {
       return alert('Required data is missing!')
     }
@@ -170,7 +173,7 @@ const mapActionsToProps = (dispatch) => ({
     }
 
     updateChildren(children, family.user.uid)
-    postChild(children.childFirst, family.parentLast, children.age, children.gender, children.notes,
+    postChild(children.childFirst, loginFamily.parentLast, children.age, children.gender, children.notes,
               children.type, children.totalPoints, children.fitness, children.samaritan, children.learning, children.timeStamp, family.user.uid)
               .then(child => postChildId(child.path.pieces_[2], child.path.pieces_[1], child.path.pieces_[2]) )
               .catch(err => alert(err))
